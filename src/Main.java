@@ -24,14 +24,12 @@ public class Main extends Application{
         // create a button
         button = new Button();
         button.setText("Click me");
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("I am an anonymous inner class");
-            }
+        button.setOnAction(event -> {
+            System.out.println("event handler for button using lambda expression");
+            System.out.println("second line");
         });
-        // creating a simple layout (stackpane)
 
+        // creating a simple layout (stackpane)
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
 
