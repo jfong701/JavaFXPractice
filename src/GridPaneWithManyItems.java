@@ -11,24 +11,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 
 public class GridPaneWithManyItems {
   
-  // FIELDS
-  private static GridPane grid;
-  private static Label questionNums[];
-  private static Label questionLabels[];
-  private static TextField answerFields[];
-  private static int numQuestions;
-  private static String[] mockQuestions;
   
   public static void openScene(Stage primaryStage) {
     // Establish a gridpane layout
     
     GridPane grid = new GridPane();
-    grid = new GridPane();
     
     grid.setAlignment(Pos.CENTER);
     grid.setPadding(new Insets(15, 15, 15, 15));
@@ -39,9 +30,6 @@ public class GridPaneWithManyItems {
     ScrollPane sp = new ScrollPane(grid);
     sp.setFitToHeight(true);
     sp.setFitToWidth(true);
-
-    Scene addStudentsScene = new Scene(sp, 500, 250);
-    primaryStage.setScene(addStudentsScene);
     currentRow = 0;
 
     // Title
@@ -69,13 +57,12 @@ public class GridPaneWithManyItems {
      */
     
     // DECLARE
-    /*
+
     Label questionNums[];
     Label questionLabels[];
     TextField answerFields[];
     int numQuestions;
     String[] mockQuestions;
-    */
     
     // INITIALIZE
     numQuestions = 10;
@@ -90,17 +77,23 @@ public class GridPaneWithManyItems {
     
     // ITERATE THROUGH QUESTION NUMS, LABELS, AND ANSWER FIELDS
     for (int i = 0; i < numQuestions; i++) {
-      questionNums[i].setText(Integer.toString(i) + ".");
-      questionLabels[i].setText(mockQuestions[i]);
+      questionNums[i] = new Label(Integer.toString(i) + ".");
+      grid.add(questionNums[i], 0, currentRow);
+      currentRow++;
+      
+      questionLabels[i] = new Label(mockQuestions[i]);
+      grid.add(questionLabels[i], 0, currentRow);
+      currentRow++;
+      
+      answerFields[i] = new TextField();
+      grid.add(answerFields[i], 0, currentRow);
+      currentRow += 2;
     }
     
-  }
-  
-  /**
-   * helper function add objects to the gridPane.
-   */
-  private static void addToGrid() {
     
+    
+    Scene addStudentsScene = new Scene(sp, 500, 250);
+    primaryStage.setScene(addStudentsScene);
   }
   
 }
