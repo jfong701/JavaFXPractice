@@ -36,17 +36,17 @@ public class GridPaneWithManyItems {
     currentRow = 0;
 
     // Title
-    Text sceneTitle = new Text("aba");
+    Label sceneTitle = new Label("aba");
     sceneTitle.setFont(Font.font("Verdana", FontWeight.NORMAL, 20));
     grid.add(sceneTitle, 0, currentRow, 2, 1);
     currentRow++;
 
     // Questions
-    Text questionNumLabel = new Text("1.");
+    Label questionNumLabel = new Label("1.");
     grid.add(questionNumLabel, 0, currentRow, 2, 1);
     currentRow++;
 
-    Text questionLabel = new Text("What is 3 + 4?");
+    Label questionLabel = new Label("What is 3 + 4?");
     grid.add(questionLabel, 0, currentRow,2, 1);
     currentRow++;
 
