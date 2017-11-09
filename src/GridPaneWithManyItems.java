@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 
 public class GridPaneWithManyItems {
-
+  
   public static void openScene(Stage primaryStage) {
     // Establish a gridpane layout
     
@@ -53,6 +53,40 @@ public class GridPaneWithManyItems {
     TextField answerField = new TextField();
     grid.add(answerField, 0, currentRow, 2, 1);
     currentRow++;
+    
+    /*
+     * CREATING ARRAYS OF QUESTION LABELS AND TEXTBOXES
+     * INITIALIZED TO A FIXED NUMBER... FOR NOW...
+     */
+    
+    // DECLARE
+    Label questionNums[];
+    Label questionLabels[];
+    TextField answerFields[];
+    int numQuestions;
+    String[] mockQuestions;
+    
+    // INITIALIZE
+    numQuestions = 10;
+    mockQuestions = new String[]{"The first question", "the second",
+        "and the third", "fourth question", "la cinquième question",
+        "numéro six", "the 7th", "eigth question", "ninth question", 
+        "Question X"};
+    
+    questionNums = new Label[numQuestions];
+    questionLabels = new Label[numQuestions];
+    answerFields = new TextField[numQuestions];
+    
+    // ITERATE THROUGH QUESTION NUMS, LABELS, AND ANSWER FIELDS
+    for (int i = 0; i < numQuestions; i++) {
+      questionNums[i].setText(Integer.toString(i) + ".");
+      questionLabels[i].setText(mockQuestions[i]);
+    }
+    
+  }
+  
+  
+  private static void addToGrid() {
     
   }
   
