@@ -16,10 +16,19 @@ import javafx.stage.Stage;
 
 public class GridPaneWithManyItems {
   
+  // FIELDS
+  private static GridPane grid;
+  private static Label questionNums[];
+  private static Label questionLabels[];
+  private static TextField answerFields[];
+  private static int numQuestions;
+  private static String[] mockQuestions;
+  
   public static void openScene(Stage primaryStage) {
     // Establish a gridpane layout
     
     GridPane grid = new GridPane();
+    grid = new GridPane();
     
     grid.setAlignment(Pos.CENTER);
     grid.setPadding(new Insets(15, 15, 15, 15));
@@ -60,11 +69,13 @@ public class GridPaneWithManyItems {
      */
     
     // DECLARE
+    /*
     Label questionNums[];
     Label questionLabels[];
     TextField answerFields[];
     int numQuestions;
     String[] mockQuestions;
+    */
     
     // INITIALIZE
     numQuestions = 10;
@@ -85,7 +96,9 @@ public class GridPaneWithManyItems {
     
   }
   
-  
+  /**
+   * helper function add objects to the gridPane.
+   */
   private static void addToGrid() {
     
   }
